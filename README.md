@@ -110,8 +110,8 @@ sudo mv report.html /var/www/html/report.html
 
 ## 3. 자동화 스크립트 + 백업 + cron
 
-Apache 서버를 자동화해서, 실무에서 진짜 하는 백업/배포/유지관리 흐름해보자규우우! 악
-Ubuntu 서버에서 Apache 설치 및 웹페이지 배포, 백업 스크립트를 자동화하고 cron을 통해 주기적 실행을 구성했습니다!
+#### Apache 서버를 자동화해서, 실무에서 진짜 하는 백업/배포/유지관리 흐름해보자규우우! 악
+#### Ubuntu 서버에서 Apache 설치 및 웹페이지 배포, 백업 스크립트를 자동화하고 cron을 통해 주기적 실행을 구성했습니다!
 
 <✅Apache 웹서버 자동화 배포 + 백업 + 스케줄링 (cron)>
 
@@ -122,38 +122,38 @@ Ubuntu 서버에서 Apache 설치 및 웹페이지 배포, 백업 스크립트�
 
 1. setup.sh – Apache 설치 + index.html 배포 자동화 --> nano setup.sh
 
-Apache 설치 => sudo apt update && sudo apt install apache2 -y
+- Apache 설치 => sudo apt update && sudo apt install apache2 -y
 
-웹페이지 배포  => echo "<h1*>Welcome to my automated Apache server!</h1*><p*>Created by Dahee Lee </p*>" | sudo tee /var/www/html/index.html
+- 웹페이지 배포  => echo "<h1*>Welcome to my automated Apache server!</h1*><p*>Created by Dahee Lee </p*>" | sudo tee /var/www/html/index.html
 
-Apache 재시작  => sudo systemctl restart apache2
+- Apache 재시작  => sudo systemctl restart apache2
 
-echo "Apache 설치 및 웹페이지 배포 완료!"
+- echo "Apache 설치 및 웹페이지 배포 완료!"
 
-chmod +x setup.sh
+- chmod +x setup.sh
 
 2. backup.sh – 웹 페이지와 로그 백업 자동화
 
-nano backup.sh
+- nano backup.sh
 
-백업 폴더 및 파일명 => 
+- 백업 폴더 및 파일명 => 
 TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
 BACKUP_DIR=~/apache_backups
 mkdir -p $BACKUP_DIR
 
-백업 항목: 웹페이지와 로그 => tar -czf $BACKUP_DIR/backup_$TIMESTAMP.tar.gz /var/www/html /var/log/apache2
+- 백업 항목: 웹페이지와 로그 => tar -czf $BACKUP_DIR/backup_$TIMESTAMP.tar.gz /var/www/html /var/log/apache2
 
-echo "백업 완료: $BACKUP_DIR/backup_$TIMESTAMP.tar.gz"
+- echo "백업 완료: $BACKUP_DIR/backup_$TIMESTAMP.tar.gz"
 
-chmod +x backup.sh
+- chmod +x backup.sh
 
 3. cron에 등록해 자동 실행
 
-크론 편집 => crontab -e
+- 크론 편집 => crontab -e
 
-아래 한 줄 추가 (매일 오전 2시에 백업 실행) => 0 2 * * * /home/ubuntu/backup.sh >> /home/ubuntu/backup.log 2>&1
+- 아래 한 줄 추가 (매일 오전 2시에 백업 실행) => 0 2 * * * /home/ubuntu/backup.sh >> /home/ubuntu/backup.log 2>&1
 
-경로는 내 사용자 홈 디렉토리에 따라 수정!! 예: /home/ubuntu → 실제 사용자 경로 확인은 echo $HOME 로 가능
+- 경로는 내 사용자 홈 디렉토리에 따라 수정!! 예: /home/ubuntu → 실제 사용자 경로 확인은 echo $HOME 로 가능
 
 ```
 구성 파일
