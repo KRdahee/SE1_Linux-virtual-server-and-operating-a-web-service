@@ -21,7 +21,7 @@ VirtualBox를 활용하여 Ubuntu Server를 설치하고, Apache 웹 서버를 �
 - 브라우저를 통한 웹 페이지 확인
 
 #### 실행 화면
-![Apache Page](screenshots/apache-default.png)
+![Apache Page] 캡쳐 파일 등록 첨부 완료!✅
 
 #### 배운 점
 - 리눅스 서버 환경의 구조와 기본 명령어 숙지
