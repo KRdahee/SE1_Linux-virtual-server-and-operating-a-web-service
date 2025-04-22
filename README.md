@@ -37,13 +37,29 @@ VirtualBox를 활용하여 Ubuntu Server를 설치하고, Apache 웹 서버를 �
 #### 사용 명령어 요약
 
 ```bash
-sudo apt update && sudo apt upgrade -y
+sudo apt update && sudo apt upgrade -y   Apache라는 웹 서버 프로그램을 설치
 sudo apt install apache2 -y
-ip a 
+ip a  가상 서버 IP 확인:
 
 결과 화면
-http://[Ubuntu서버 IP주소] -> http://192.168.0.***/ 접속 시 Apache 기본 환영 페이지 확인
+http://[Ubuntu서버 IP주소] -> http://192.168.0.***/ 접속 시 Apache 기본 환영 페이지 확인. 서버가 잘 켜졌는지 확인하는거!
+가상 머신 안에서만 열리는 거라서, 호스트 PC에서 가상 서버의 IP로 접속
 
 실행권한 
 chmod +x setup.sh
 
+_____________________________________________________________________________
+📌 필수 확인
+
+✅ 가상 머신 네트워크 설정이 NAT일 경우, 접속이 안됌. 이럴 땐 "브리지 어댑터"로 바꿔줘야 함
+
+바꾸는 방법:
+VirtualBox 메인화면 → 가상 머신 선택
+
+[설정] → [네트워크]
+
+어댑터1 → "네트워크 어댑터 사용" 체크
+
+연결 방식 → 브리지 어댑터(Bridged Adapter) 선택
+
+확인 → 가상 머신 다시 시작
