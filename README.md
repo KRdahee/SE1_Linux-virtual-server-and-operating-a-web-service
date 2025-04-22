@@ -91,7 +91,7 @@ VirtualBox 메인화면 → 가상 머신 선택
 </html>
 
 ```
-#### 2.  Apache 로그 확인
+#### 2. Apache 로그 확인
 sudo tail -f /var/log/apache2/access.log
 → 브라우저로 접속할 때마다 로그가 실시간 출력됨
 
@@ -101,7 +101,7 @@ sudo apt install goaccess -y
 #### 4. GoAccess 실행
 sudo goaccess /var/log/apache2/access.log --log-format=COMBINED -o report.html
 
-#### 5. 에서 결과 보기
+#### 5. 웹 에서 결과 보기
 sudo mv report.html /var/www/html/report.html
 → 브라우저에서 http://서버ip/report.html 접속!
 
