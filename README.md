@@ -124,7 +124,7 @@ Ubuntu 서버에서 Apache 설치 및 웹페이지 배포, 백업 스크립트�
 
 Apache 설치 => sudo apt update && sudo apt install apache2 -y
 
-웹페이지 배포  => echo "<h1>Welcome to my automated Apache server!</h1><p>Created by [너의 이름]</p>" | sudo tee /var/www/html/index.html
+웹페이지 배포  => echo "<h1*>Welcome to my automated Apache server!</h1*><p*>Created by Dahee Lee </p*>" | sudo tee /var/www/html/index.html
 
 Apache 재시작  => sudo systemctl restart apache2
 
