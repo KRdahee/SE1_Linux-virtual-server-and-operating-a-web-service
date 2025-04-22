@@ -76,19 +76,18 @@ VirtualBox 메인화면 → 가상 머신 선택
 직접 만든 웹페이지를 /var/www/html에 배포. Apache 로그 분석 툴 GoAccess 설치 → 실시간 모니터링
 
 1. 웹사이트 배포 (간단한 HTML) --> sudo nano /var/www/html/index.html (포트폴리오 홈페이지)
-
-<!-- 예시 내용 -->
+```
 <!DOCTYPE html>
 <html>
   <head>
     <title>My Apache Site</title>
   </head>
   <body>
-    <h1>Hello from my Ubuntu Apache Server!</h1>
-    <p>Created by [너의 이름]</p>
+    <h2>Hello from my Ubuntu Apache Server!</h2>
+    <p> Created by Dahee! </p>
   </body>
 </html>
-
+```
 2.  Apache 로그 확인
 sudo tail -f /var/log/apache2/access.log
 → 브라우저로 접속할 때마다 로그가 실시간 출력됨
