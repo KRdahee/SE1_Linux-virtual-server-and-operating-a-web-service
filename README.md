@@ -73,10 +73,9 @@ VirtualBox 메인화면 → 가상 머신 선택
 
 <✅Apache 웹서비스 배포 + 로그 모니터링 실습>
 
-🎯 목표
-직접 만든 웹페이지를 /var/www/html에 배포. Apache 로그 분석 툴 GoAccess 설치 → 실시간 모니터링
+🎯 목표: 직접 만든 웹페이지를 /var/www/html에 배포. Apache 로그 분석 툴 GoAccess 설치 → 실시간 모니터링
 
-1. 웹사이트 배포 (간단한 HTML) --> sudo nano /var/www/html/index.html (포트폴리오 홈페이지)
+#### 1. 웹사이트 배포 (간단한 HTML) --> sudo nano /var/www/html/index.html (포트폴리오 홈페이지)
 
 ```
 
@@ -92,17 +91,17 @@ VirtualBox 메인화면 → 가상 머신 선택
 </html>
 
 ```
-2.  Apache 로그 확인
+#### 2.  Apache 로그 확인
 sudo tail -f /var/log/apache2/access.log
 → 브라우저로 접속할 때마다 로그가 실시간 출력됨
 
-3. 실시간 로그 분석 툴 설치 (GoAccess)
+#### 3. 실시간 로그 분석 툴 설치 (GoAccess)
 sudo apt install goaccess -y
 
-4. GoAccess 실행
+#### 4. GoAccess 실행
 sudo goaccess /var/log/apache2/access.log --log-format=COMBINED -o report.html
 
-5. 에서 결과 보기
+#### 5. 에서 결과 보기
 sudo mv report.html /var/www/html/report.html
 → 브라우저에서 http://서버ip/report.html 접속!
 
@@ -116,11 +115,11 @@ sudo mv report.html /var/www/html/report.html
 <✅Apache 웹서버 자동화 배포 + 백업 + 스케줄링 (cron)>
 
 🎯 목표
-1. Apache 웹 서버 자동 설치 & 페이지 배포 스크립트 (setup.sh)
-2. 웹사이트와 로그 자동 백업 스크립트 (backup.sh)
-3. cron에 등록하여 주기적으로 자동 백업 실행
+#### 1. Apache 웹 서버 자동 설치 & 페이지 배포 스크립트 (setup.sh)
+#### 2. 웹사이트와 로그 자동 백업 스크립트 (backup.sh)
+#### 3. cron에 등록하여 주기적으로 자동 백업 실행
 
-1. setup.sh – Apache 설치 + index.html 배포 자동화 --> nano setup.sh
+#### 1. setup.sh – Apache 설치 + index.html 배포 자동화 --> nano setup.sh
 
 - Apache 설치 => sudo apt update && sudo apt install apache2 -y
 
@@ -132,7 +131,7 @@ sudo mv report.html /var/www/html/report.html
 
 - chmod +x setup.sh
 
-2. backup.sh – 웹 페이지와 로그 백업 자동화
+#### 2. backup.sh – 웹 페이지와 로그 백업 자동화
 
 - nano backup.sh
 
@@ -147,7 +146,7 @@ mkdir -p $BACKUP_DIR
 
 - chmod +x backup.sh
 
-3. cron에 등록해 자동 실행
+#### 3. cron에 등록해 자동 실행
 
 - 크론 편집 => crontab -e
 
