@@ -1,6 +1,6 @@
-# 혼자해보는 SE 실습 (Linux-virtual-server-and-operating-a-web-service)
+# 혼자해보는 SE 실습!!
 
-# 리눅스 가상 서버 구축 및 웹 서비스 운영
+## 리눅스 가상 서버 구축 및 웹 서비스 운영
 
 ## 개요
 VirtualBox를 활용하여 Ubuntu Server를 설치하고, Apache 웹 서버를 구축하였습니다.  
